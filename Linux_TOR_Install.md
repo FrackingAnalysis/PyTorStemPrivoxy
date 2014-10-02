@@ -1,0 +1,170 @@
+##Linux TOR Install##
+
+- 7zip
+	- p7zip
+	- p7zip-full
+	- `sudo apt-get install p7zip p7zip-full`
+- nautilus
+	- nautilus-open-terminal
+	- `sudo apt-get install nautilus-open-terminal` 
+- browsers
+	- firefox
+	- chromium-browser
+	- `sudo apt-get install chromium-browser firefox`
+- cryptography
+	- gnupg
+	- gpa
+	- kleopatra
+	- seahorse
+	- seahorse-nautilus
+	- rng-tools
+		- This package may be required on virtual machines for the following reasons:
+			- Key generation requires the system to work with a source of random numbers. Systems which are better at generating random numbers than others are said to have higher entropy. This is typically obtained from the system hardware; the GnuPG documentation recommends that keys be generated only on a local machine (i.e. not one being accessed across a network), and that keyboard, mouse and disk activity be maximized during key generation to increase the entropy of the system.
+			- Unfortunately, there are some scenarios - for example, on virtual machines which don’t have real hardware - where insufficient entropy causes key generation to be extremely slow. If you come across this problem, you should investigate means of increasing the system entropy. On virtualized Linux systems, this can often be achieved by installing the rng-tools package. This is available at least on RPM-based and APT-based systems (Red Hat/Fedora, Debian, Ubuntu and derivative distributions).
+	- haveged
+		- Installing this may assist in obtaining the needed entropy to make GPG key generation run within an acceptable timeframe.  
+	- `sudo apt-get install gnupg gpa kleopatra seahorse seahorse-nautilus rng-tools haveged`
+- databases
+	- sqlite
+		- sqlite3
+		- sqlitebrowser
+		- sqliteman
+		- sqliteman-doc
+		- libqt4-dev
+		- libsqlite3-dev
+		- sqlite3-doc
+		- `sudo apt-get install sqlite3 sqlitebrowser sqliteman sqliteman-doc libsqlite3-dev libqt4-dev sqlite3-doc`
+		- [sqlitestudio (Linux 64-bit)](http://sqlitestudio.pl/files/free/stable/linux64/sqlitestudio-2.1.5.bin)
+- downloaders
+	- filezilla
+	- transmission (a BitTorrent equivalent)
+	- transmission-gtk
+	- `sudo apt-get install filezilla transmission transmission-gtk` 
+- editors
+	- gedit (is already installed with Linux)
+	- retext (Markdown editor)
+	- `sudo apt-get install gedit retext`
+- folders
+	- ~/data
+		- voters
+			- nc (these are North Carolina voter files suitable for use as "test" files) 
+	- ~/projects
+		- python *(this is the "workspace" folder for the Spyder IDE)*
+	- ~/temp
+- python
+	- python 2.7
+		- libraries 
+			- python
+			- python-all
+			- python-dev
+			- python-bcrypt
+			- python-configparser
+			- python-crypto
+			- python-gdal
+			- python-gnupg
+			- python-iniparse
+			- python-pip
+			- python-numpy
+			- python-pandas
+			- python-pyodbc
+			- python-pysqlite2
+			- python-socksipy
+			- python-sphinx
+			- python-stem
+			- python-torctl
+			- python-xlrd
+			- python-zmq
+			- `sudo apt-get install python python-all python-dev python-bcrypt python-configparser python-crypto python-gdal python-gnupg python-iniparse python-numpy python-pyodbc python-pandas python-pip python-pysqlite2 python-socksipy python-sphinx python-stem python-torctl python-xlrd python-zmq`
+		- connectors
+			- ***NOTE: add freetds.conf file to the {home} folder of the user***
+				- [global]
+					- tds version = auto   
+			- freetds-bin
+			- freetds-common
+			- freetds-dev
+			- libdbd-freetds 
+			- python-pymssql
+			- python-mysql.connector
+			- python-pysqlite2 (for SQLite 3)
+			- python-pysqlite2-doc
+			- tdsodbc
+			- unixodbc
+			- unixodbc-dev
+			- `sudo apt-get install freetds-bin freetds-common freetds-dev libdbd-freetds python-pymssql python-mysql.connector python-pysqlite2 tdsodbc unixodbc unixodbc-dev`
+		- documentation
+			- python-doc  
+			- python-pysqlite2-doc
+			- python-numpy-doc
+			- `sudo apt-get install python-doc python-pysqlite2-doc python-numpy-doc`
+	- ides
+		- spyder (Python IDE)
+		- `sudo apt-get install spyder`
+		- `sudo pip install --upgrade spyder`
+		- [Spyder 2.3.0](https://pypi.python.org/packages/source/s/spyder/spyder-2.3.0.zip#md5=7c99e0bc6485b0700f9570201282a139)
+	- python 3.4
+		- libraries 
+			- python3
+			- python3-all
+			- python3-dev
+			- python3-bcrypt
+			- *python3-configparser (now integrated into Python 3)*
+			- python3-crypto
+			- python3-gdal
+			- python3-gnupg
+			- *python3-iniparse (not present yet)*
+			- python3-pip
+			- python3-numpy
+			- python3-pandas
+			- *python3-pyodbc (not present yet)*
+			- *python3-socksipy (not present yet)*
+			- python3-sphinx
+			- python3-stem
+			- *python3-torctl (not present yet)*
+			- python3-xlrd
+			- python3-zmq
+			- `sudo apt-get install python3 python3-all python3-dev python3-bcrypt python3-configparser python3-crypto python3-gdal python3-gnupg python3-iniparse python3-numpy python3-pyodbc python3-pandas python3-pip python3-socksipy python3-sphinx python3-stem python3-torctl python3-xlrd python3-zmq`
+		- connectors
+			- ***NOTE: add freetds.conf file to the {home} folder of the user***
+				- [global]
+					- tds version = auto   
+			- freetds-bin
+			- freetds-common
+			- freetds-dev
+			- libdbd-freetds 
+			- python3-pymssql (not present yet)
+			- python3-mysql.connector
+			- tdsodbc
+			- unixodbc
+			- unixodbc-dev
+			- `sudo apt-get install freetds-bin freetds-common freetds-dev libdbd-freetds python3-mysql.connector tdsodbc unixodbc unixodbc-dev`
+		- documentation
+			- python3-doc  
+			- `sudo apt-get install python3-doc`
+	- ides
+		- spyder3 (Python IDE)
+		- `sudo apt-get install spyder3`
+		- `sudo pip3 install --upgrade spyder`
+- source code managers
+	- git
+		- rabbitvcs-cli
+		- rabbitvcs-gedit
+		- rabbitvcs-nautilus
+		- rabbitvcs-core
+		- `sudo apt-get rabbitvcs-cli rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-core` 
+	- mercurial
+		- mercurial
+		- tortoisehg-nautilus
+		- tortoisehg
+		- `sudo apt-get install mercurial tortoisehg-nautilus tortoisehg`
+- tor
+	- tor
+	- tor-geoipdb
+	- vidalia
+	- torchat
+	- privoxy
+	- `sudo apt-get install tor tor-geoipdb torchat privoxy vidalia`
+	- To compensate for app-armor interfering with Vidalia when it is invoked:
+		- `sudo ln -s /etc/apparmor.d/usr.bin.vidalia /etc/apparmor.d/disable/`
+		- `sudo apparmor_parser -R /etc/apparmor.d/usr.bin.vidalia`
+		- `sudo /etc/init.d/tor start` or `sudo /etc/init.d/tor restart`
+      
