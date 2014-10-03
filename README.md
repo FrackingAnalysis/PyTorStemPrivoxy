@@ -1,11 +1,13 @@
 PyTorStemPrivoxy
 ================
 
-Python, Tor, Stem, Privoxy program that requests new connections via Tor and thereby obtains new IP addresses as well.# Crawling Anonymously with Tor in Python #
+Python, Tor, Stem, Privoxy program that requests new connections via Tor and thereby obtains new IP addresses as well.
+
+# Crawling Anonymously with Tor in Python #
 
 *adapted from the article "[Crawling anonymously with Tor in Python](http://sacharya.com/crawling-anonymously-with-tor-in-python/)" by S. Acharya, Nov 2, 2013.*
 
-The most common use-case is to be able to hide one's identity using TOR or being able to change identities programmatically, for example when you are crawling a website like Google and you donâ€™t want to be rate-limited or blocked via IP address.
+The most common use-case is to be able to hide one's identity using TOR or being able to change identities programmatically, for example when you are crawling a website like Google and you don't want to be rate-limited or blocked via IP address.
 
 ## Tor ##
 
