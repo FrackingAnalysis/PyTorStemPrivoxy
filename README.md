@@ -79,7 +79,8 @@ sudo gedit /etc/privoxy/config
 and enable `forward-socks5` as follows:
 	
 ```shell
-forward-socks5 / localhost:9050
+# source https://stackoverflow.com/questions/9887505/how-to-change-tor-identity-in-python
+forward-socks5 / localhost:9050 . #dot is important at the end
 ```
 
 Restart `privoxy` after making the change to the configuration file.
